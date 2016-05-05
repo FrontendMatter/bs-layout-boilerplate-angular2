@@ -1,15 +1,10 @@
-import { Component, AfterViewInit } from '@angular/core';
-import { RouteConfig, ROUTER_PROVIDERS, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
-import { PageLayoutFixedComponent } from './page-layout-fixed.component';
-import { PageSidebarComponent } from './page-sidebar.component';
-
-declare var BootstrapLayout:any;
+import { Component } from '@angular/core';
+import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+import { HomePageComponent } from './pages/home.component';
+import { SidebarPageComponent } from './pages/sidebar.component';
 
 @Component({
 	selector: 'body',
-	providers: [
-		ROUTER_PROVIDERS
-	],
 	template: `
 		<router-outlet></router-outlet>
 	`,
@@ -19,26 +14,8 @@ declare var BootstrapLayout:any;
 })
 
 @RouteConfig([
-	{
-		path: '/',
-		name: 'Home',
-		component: PageLayoutFixedComponent,
-		useAsDefault: true
-	},
-	{
-		path: '/sidebar',
-		name: 'Sidebar',
-		component: PageSidebarComponent
-	}
+	{ path: '/', name: 'Home', component: HomePageComponent, useAsDefault: true },
+	{ path: '/sidebar', name: 'Sidebar', component: SidebarPageComponent }
 ])
 
-export class AppComponent implements AfterViewInit {
-
-	title = 'Angular 2 Sidebar Layout';
-	
-	ngAfterViewInit():void {
-		console.log('afterViewInit():');
-		// BootstrapLayout.Sidebar.init();
-		// BootstrapLayout.Scrollable();
-	}
-}
+export class AppComponent {}

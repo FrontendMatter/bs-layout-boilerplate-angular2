@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
-import { LayoutFixedComponent } from './layout-fixed.component';
 import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+import { LayoutComponent } from 'app/components/layout.component';
+import { NavbarComponent } from 'app/components/navbar.component';
 
 @Component({
-	selector: 'page-layout-fixed',
 	template: `
-		<layout-fixed>
+		<layout type="fixed">
+
+			<navbar></navbar>
 
 			<!-- Breadcrumb -->
 			<ol class="breadcrumb">
-				<li><a [routerLink]="['Home']">AdminPlus</a></li>
+				<li><a [routerLink]="['Home']">BS Layout</a></li>
 				<li class="active">Fixed layout</li>
 			</ol>
 			<!-- // END Breadcrumb -->
@@ -20,19 +22,17 @@ import { ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
 			<div class="card">
 				<div class="card-block">
-					This is a demo for the <a target="_blank" href="https://github.com/themekit/adminplus-boilerplate-npm">adminplus-boilerplate-npm</a> repository. <br>
-					Read the full guide <a target="_blank" href="http://adminplus.themekit.io/basic-usage">Simple npm workflow</a>.
+					This is a demo for the <a target="_blank" href="https://github.com/themekit/bs-layout-boilerplate-angular2">bs-layout-boilerplate-angular2</a> repository, using <a target="_blank" href="https://github.com/themekit/bootstrap-layout">Bootstrap Layout</a> with Angular 2.
 				</div>
 			</div>
 
-		</layout-fixed>
+		</layout>
 	`,
 	directives: [
-		LayoutFixedComponent,
-		ROUTER_DIRECTIVES
+		ROUTER_DIRECTIVES,
+		LayoutComponent,
+		NavbarComponent
 	]
 })
 
-export class PageLayoutFixedComponent {
-
-}
+export class HomePageComponent {}
