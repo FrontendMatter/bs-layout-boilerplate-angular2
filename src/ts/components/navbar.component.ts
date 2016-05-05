@@ -1,42 +1,21 @@
-import { Component } from '@angular/core';
-import { Router, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+import { Component, Input } from '@angular/core';
 import { LayoutComponent } from 'app/components/layout.component';
-import { SidebarToggleComponent } from 'app/components/sidebar-toggle.component';
 
 @Component({
 	selector: 'navbar',
 	template: `
 		<!-- Navbar -->
-		<nav class="navbar navbar-dark bg-primary navbar-full navbar-fixed-top" [class.ls-left-sidebar]="layout.sidebarComponents.length > 0">
-			<div class="container">
-
-				<!-- Navbar toggle -->
-				<button class="navbar-toggler hidden-md-up pull-xs-right last-child-xs" type="button" data-toggle="collapse" data-target="#navbar"><span class="material-icons">menu</span></button>
-
-				<!-- Sidebar toggle -->
-		    	<button class="navbar-toggler pull-xs-left" type="button" sidebar-toggle data-target="#sidebar"><span class="material-icons">menu</span></button>
-
-				<!-- Brand -->
-				<a class="navbar-brand" [routerLink]="['Home']">Brand</a>
-
-				<!-- Collapse -->
-				<div class="collapse navbar-toggleable-xs" id="navbar">
-					<ul class="nav navbar-nav">
-						<li class="nav-item" [class.active]="router.isRouteActive(router.generate(['/Home']))"><a class="nav-link" [routerLink]="['Home']">Fixed</a></li>
-						<li class="nav-item" [class.active]="router.isRouteActive(router.generate(['/Sidebar']))"><a class="nav-link" [routerLink]="['Sidebar']">Sidebar</a></li>
-					</ul>
-				</div>
-				<!-- // END Collapse -->
+		<nav class="navbar navbar-full navbar-fixed-top {{ style }}" [class.ls-left-sidebar]="layout.sidebarComponents.length">
+			<div [class.container]="!layout.sidebarComponents.length">
+				<ng-content></ng-content>
 			</div>
 		</nav>
 		<!-- // END Navbar -->
-	`,
-	directives: [
-		ROUTER_DIRECTIVES,
-		SidebarToggleComponent
-	]
+	`
 })
 
 export class NavbarComponent {
-	constructor(private router: Router, private layout: LayoutComponent) {}
+	@Input() style: string = 'navbar-dark bg-primary';
+
+	constructor(private layout: LayoutComponent) {}
 }
