@@ -1,4 +1,4 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive } from '@angular/core';
 import { Sidebar } from 'bootstrap-layout';
 
 declare var jQuery: any;
@@ -11,12 +11,6 @@ declare var jQuery: any;
 })
 
 export class SidebarToggleComponent {
-	private el: HTMLElement;
-
-	constructor(el: ElementRef) {
-		this.el = el.nativeElement
-	}
-	
 	onClick(e): void {
 		e.stopPropagation()
 		const target = jQuery(e.currentTarget).data('target')
