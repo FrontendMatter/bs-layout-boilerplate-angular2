@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { LayoutComponent } from 'app/components/layout.component';
+import { SidebarToggleComponent } from 'app/components/sidebar-toggle.component';
 
 @Component({
 	selector: 'navbar',
@@ -13,7 +14,7 @@ import { LayoutComponent } from 'app/components/layout.component';
 				<button class="navbar-toggler hidden-md-up pull-xs-right last-child-xs" type="button" data-toggle="collapse" data-target="#navbar"><span class="material-icons">menu</span></button>
 
 				<!-- Sidebar toggle -->
-		    	<button class="navbar-toggler pull-xs-left" type="button" data-toggle="sidebar" data-target="#sidebar"><span class="material-icons">menu</span></button>
+		    	<button class="navbar-toggler pull-xs-left" type="button" sidebar-toggle data-target="#sidebar"><span class="material-icons">menu</span></button>
 
 				<!-- Brand -->
 				<a class="navbar-brand" [routerLink]="['Home']">Brand</a>
@@ -31,7 +32,8 @@ import { LayoutComponent } from 'app/components/layout.component';
 		<!-- // END Navbar -->
 	`,
 	directives: [
-		ROUTER_DIRECTIVES
+		ROUTER_DIRECTIVES,
+		SidebarToggleComponent
 	]
 })
 

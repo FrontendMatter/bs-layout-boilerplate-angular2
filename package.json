@@ -8,7 +8,7 @@
     "lite": "lite-server ./dist",
     "typings": "typings",
     "postinstall": "typings install",
-    "cp:bs": "copyfiles -f node_modules/bootstrap-layout/dist/* node_modules/bootstrap/dist/js/bootstrap.min.js node_modules/bootstrap/dist/css/bootstrap.min.css* node_modules/jquery/dist/jquery.min.js node_modules/tether/dist/js/tether.min.js dist/vendor/theme",
+    "cp:theme": "copyfiles -f node_modules/bootstrap-layout/dist/* node_modules/bootstrap/dist/js/bootstrap.min.js node_modules/bootstrap/dist/css/bootstrap.min.css* node_modules/jquery/dist/jquery.min.js node_modules/tether/dist/js/tether.min.js dist/vendor/theme",
     "cp:es6-shim": "ncp node_modules/es6-shim dist/vendor/es6-shim",
     "cp:angular2-in-memory-web-api": "ncp node_modules/angular2-in-memory-web-api dist/vendor/angular2-in-memory-web-api",
     "cp:systemjs": "ncp node_modules/systemjs dist/vendor/systemjs",
@@ -16,8 +16,8 @@
     "cp:reflect-metadata": "ncp node_modules/reflect-metadata dist/vendor/reflect-metadata",
     "cp:zonejs": "ncp node_modules/zone.js dist/vendor/zone.js",
     "cp:angular": "ncp node_modules/@angular dist/vendor/@angular",
-    "cp": "concurrently \"npm run cp:bs\" \"npm run cp:es6-shim\" \"npm run cp:angular2-in-memory-web-api\" \"npm run cp:systemjs\" \"npm run cp:rxjs\" \"npm run cp:reflect-metadata\" \"npm run cp:zonejs\" \"npm run cp:angular\"",
-    "deploy": "surge"
+    "cp": "concurrently \"npm run cp:theme\" \"npm run cp:es6-shim\" \"npm run cp:angular2-in-memory-web-api\" \"npm run cp:systemjs\" \"npm run cp:rxjs\" \"npm run cp:reflect-metadata\" \"npm run cp:zonejs\" \"npm run cp:angular\"",
+    "deploy": "surge --project ./dist --domain bs-layout-boilerplate-angular2.themekit.io"
   },
   "license": "ISC",
   "dependencies": {

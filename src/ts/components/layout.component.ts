@@ -1,8 +1,6 @@
 import { Component, Input, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
 import { SidebarComponent } from 'app/components/sidebar.component';
 
-declare var BootstrapLayout: any;
-
 @Component({
 	selector: 'layout',
 	template: `

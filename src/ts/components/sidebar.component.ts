@@ -1,6 +1,5 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
-
-declare var BootstrapLayout: any;
+import { Sidebar } from 'bootstrap-layout';
 
 @Component({
 	selector: 'sidebar',
@@ -17,9 +16,9 @@ declare var BootstrapLayout: any;
 
 export class SidebarComponent implements AfterViewInit, OnDestroy {
 	ngAfterViewInit(): void {
-		BootstrapLayout.Sidebar.initSidebar('#sidebar');
+		Sidebar.initSidebar('#sidebar');
 	}
 	ngOnDestroy(): void {
-		BootstrapLayout.Sidebar.destroySidebar('#sidebar');
+		Sidebar.destroySidebar('#sidebar');
 	}
 }
