@@ -40,14 +40,11 @@
 	<!-- SystemJS Config -->
 	<script src="systemjs.config.js"></script>
 
-	<!-- Initialize Application -->
-	<script>
-	System.import('app')
-		.then(null, console.error.bind(console));
-	</script>
-
 </head>
 <body>
-	Loading ...
+	<app>Loading ...</app>
+
+	<!-- Start App -->
+	<script>System.import('app').then(null, console.error.bind(console));</script>
 </body>
 </html>

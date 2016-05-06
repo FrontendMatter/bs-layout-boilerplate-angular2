@@ -4,7 +4,7 @@ import { HomePageComponent } from './pages/home.component';
 import { SidebarPageComponent } from './pages/sidebar.component';
 
 @Component({
-	selector: 'body',
+	selector: 'app',
 	template: `
 		<router-outlet></router-outlet>
 	`,
