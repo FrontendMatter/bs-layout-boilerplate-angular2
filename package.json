@@ -45,9 +45,14 @@
   "devDependencies": {
     "concurrently": "^2.0.0",
     "copyfiles": "^0.2.1",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.2.2",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-typescript": "^2.13.1",
     "lite-server": "^2.1.0",
     "ncp": "^2.0.0",
     "surge": "^0.17.7",
+    "systemjs-builder": "^0.15.16",
     "typescript": "^1.8.10",
     "typings": "^0.8.1"
   }

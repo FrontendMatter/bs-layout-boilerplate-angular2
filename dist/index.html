@@ -34,11 +34,13 @@
 	<script src="vendor/theme/tether.min.js"></script>
 	<script src="vendor/theme/bootstrap.min.js"></script>
 
-	<!-- Bootstrap Layout -->
-	<script src="vendor/theme/bootstrap-layout.js"></script>
+	<!-- SystemJS Builder Production Bundle -->
+	<!-- <script src="app/app.bundle.js"></script> -->
 
-	<!-- SystemJS -->
+	<!-- SystemJS Config -->
 	<script src="systemjs.config.js"></script>
+
+	<!-- Initialize Application -->
 	<script>
 	System.import('app')
 		.then(null, console.error.bind(console));
