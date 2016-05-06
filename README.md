@@ -4,7 +4,17 @@
 ### Demo
 > You can [see a working live demo](http://bs-layout-boilerplate-angular2.themekit.io) of this boilerplate.
 
-## Installation
+## Usage
+
+### Clone the boilerplate repository
+```bash
+git clone https://github.com/themekit/bs-layout-boilerplate-angular2.git my-project
+```
+```bash
+cd my-project
+```
+
+### Install dependencies
 > Install via npm:
 
 ```bash
@@ -36,13 +46,13 @@ npm install -g gulp
 
 > Create a **minified** production bundle with SystemJS Builder in `./dist/app/app.bundle.js`.
 
-> The following assumes you have already compiled the TypeScript to `./dist/app/main.js`.
+> The following assumes you have already compiled the TypeScript from `./src/ts` to `./dist/app`.
 
 ```bash
 gulp release:js
 ```
 
-> To compile the TypeScript to `./dist/app/main.js` AND create a **minified** production bundle to `./dist/app/app.bundle.js` run:
+> To compile the TypeScript from `./src/ts` to `./dist/app` AND create a **minified** production bundle to `./dist/app/app.bundle.js` run:
 
 ```bash
 gulp release:ts
