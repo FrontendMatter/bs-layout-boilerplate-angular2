@@ -63,4 +63,4 @@ gulp.task('release:js', function() {
 	return build(true)
 })
 
-gulp.task('default', ['release:js'])
+gulp.task('default', ['release:ts'])

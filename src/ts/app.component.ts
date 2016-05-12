@@ -1,21 +1,24 @@
-import { Component } from '@angular/core';
-import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
-import { HomePageComponent } from './pages/home.component';
-import { SidebarPageComponent } from './pages/sidebar.component';
+import { Component, OnInit } from '@angular/core';
+import { Router, Routes, ROUTER_DIRECTIVES } from '@angular/router';
+import { HomePage } from './pages/home.page';
+import { SidebarPage } from './pages/sidebar.page';
 
 @Component({
 	selector: 'app',
-	template: `
-		<router-outlet></router-outlet>
-	`,
+	template: `<router-outlet></router-outlet>`,
 	directives: [
 		ROUTER_DIRECTIVES
 	]
 })
 
-@RouteConfig([
-	{ path: '/', name: 'Home', component: HomePageComponent, useAsDefault: true },
-	{ path: '/sidebar', name: 'Sidebar', component: SidebarPageComponent }
+@Routes([
+	{ path: '/home', component: HomePage },
+	{ path: '/sidebar', component: SidebarPage }
 ])
 
-export class AppComponent {}
+export class AppComponent implements OnInit {
+	constructor(private router: Router) {}
+	ngOnInit() {
+		this.router.navigate(['/home']);
+	}
+}
