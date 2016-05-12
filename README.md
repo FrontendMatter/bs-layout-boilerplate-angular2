@@ -1,4 +1,4 @@
-# bs-layout-boilerplate-angular2
+# Bootstrap Layout Angular 2 boilerplate
 > Angular 2 boilerplate using [Bootstrap Layout](https://github.com/themekit/bootstrap-layout)
 
 ### Demo
