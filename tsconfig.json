@@ -9,11 +9,10 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-    "outDir": "./dist/app"
+    "outDir": "./assets/js"
   },
   "exclude": [
     "node_modules",
-    "dist/vendor",
     "typings/main",
     "typings/main.d.ts"
   ]

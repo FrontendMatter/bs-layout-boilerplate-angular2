@@ -1,24 +1,22 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { LayoutComponent } from 'app/components/layout.component';
-import { NavbarComponent } from 'app/components/navbar.component';
-import { SidebarComponent } from 'app/components/sidebar.component';
-import { HelloWorldComponent } from 'app/components/hello-world.component';
-import { SidebarToggleComponent } from 'app/directives/sidebar-toggle.directive';
-import { RouterActive } from 'app/directives/router-active.directive';
+import { LayoutComponent, NavbarComponent, SidebarComponent, SidebarToggleDirective } from 'ng2-bootstrap-layout';
+import { Sidebar, SidebarToggle } from 'bootstrap-layout';
+import { HelloWorldComponent } from '../shared/hello-world.component';
+import { RouterActiveDirective } from 'ng2-router-active';
 
 @Component({
 	selector: 'sidebar-page',
 	template: `
-		<layout layout-type="fluid">
+		<ng2-bl-layout layout-type="fluid">
 
-			<navbar navbar-style="navbar-light bg-white">
+			<ng2-bl-navbar navbar-class="navbar-light bg-white">
 
 				<!-- Navbar toggle -->
 				<button class="navbar-toggler hidden-md-up pull-xs-right last-child-xs" type="button" data-toggle="collapse" data-target="#navbar"><span class="material-icons">menu</span></button>
 
 				<!-- Sidebar toggle -->
-				<button class="navbar-toggler pull-xs-left" type="button" sidebar-toggle data-target="#sidebar"><span class="material-icons">menu</span></button>
+				<button class="navbar-toggler pull-xs-left" type="button" ng2-bl-sidebar-toggle data-target="#sidebar"><span class="material-icons">menu</span></button>
 
 				<!-- Brand -->
 				<span class="navbar-brand">Dashboard</span>
@@ -26,31 +24,31 @@ import { RouterActive } from 'app/directives/router-active.directive';
 				<!-- Collapse -->
 				<div class="collapse navbar-toggleable-xs" id="navbar">
 					<ul class="nav navbar-nav">
-						<li class="nav-item" router-active><a class="nav-link" [routerLink]="['/home']">Fixed</a></li>
-						<li class="nav-item" router-active><a class="nav-link" [routerLink]="['/sidebar']">Sidebar</a></li>
+						<li class="nav-item" ng2-router-active><a class="nav-link" [routerLink]="['/home']">Fixed</a></li>
+						<li class="nav-item" ng2-router-active><a class="nav-link" [routerLink]="['/sidebar']">Sidebar</a></li>
 					</ul>
 				</div>
 				<!-- // END Collapse -->
 
-			</navbar>
+			</ng2-bl-navbar>
 
-			<sidebar sidebar-id="sidebar">
+			<ng2-bl-sidebar sidebar-id="sidebar">
 
 				<!-- Brand -->
 				<a [routerLink]="['/home']" class="sidebar-brand m-b-0 sidebar-brand-bg sidebar-brand-border">Brand</a>
 
 				<!-- Menu -->
 				<ul class="sidebar-menu sm-active-button-bg">
-					<li class="sidebar-menu-item" router-active>
+					<li class="sidebar-menu-item" ng2-router-active>
 						<a class="sidebar-menu-button" [routerLink]="['/home']"><i class="sidebar-menu-icon material-icons">home</i> Fixed layout</a>
 					</li>
-					<li class="sidebar-menu-item" router-active>
+					<li class="sidebar-menu-item" ng2-router-active>
 						<a class="sidebar-menu-button" [routerLink]="['/sidebar']"><i class="sidebar-menu-icon material-icons">menu</i> Sidebar layout</a>
 					</li>
 				</ul>
 				<!-- // END Menu -->
 
-			</sidebar>
+			</ng2-bl-sidebar>
 
 			<!-- Breadcrumb -->
 			<ol class="breadcrumb">
@@ -61,16 +59,20 @@ import { RouterActive } from 'app/directives/router-active.directive';
 
 			<hello-world></hello-world>
 
-		</layout>
+		</ng2-bl-layout>
 	`,
 	directives: [
 		ROUTER_DIRECTIVES,
 		LayoutComponent,
 		NavbarComponent,
-		SidebarToggleComponent,
+		SidebarToggleDirective,
 		SidebarComponent,
 		HelloWorldComponent,
-		RouterActive
+		RouterActiveDirective
+	],
+	providers: [
+		Sidebar,
+		SidebarToggle
 	]
 })
 

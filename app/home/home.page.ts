@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { LayoutComponent } from 'app/components/layout.component';
-import { NavbarComponent } from 'app/components/navbar.component';
-import { HelloWorldComponent } from 'app/components/hello-world.component'
-import { RouterActive } from 'app/directives/router-active.directive'
+import { LayoutComponent, NavbarComponent } from 'ng2-bootstrap-layout';
+import { HelloWorldComponent } from '../shared/index';
+import { RouterActiveDirective } from 'ng2-router-active';
 
 @Component({
 	selector: 'home-page',
 	template: `
-		<layout layout-type="fixed">
+		<ng2-bl-layout layout-type="fixed">
 
-			<navbar>
+			<ng2-bl-navbar>
 				<div class="container">
 				
 					<!-- Navbar toggle -->
@@ -22,14 +21,14 @@ import { RouterActive } from 'app/directives/router-active.directive'
 					<!-- Collapse -->
 					<div class="collapse navbar-toggleable-xs" id="navbar">
 						<ul class="nav navbar-nav">
-							<li class="nav-item" router-active><a class="nav-link" [routerLink]="['/home']">Fixed</a></li>
-							<li class="nav-item" router-active><a class="nav-link" [routerLink]="['/sidebar']">Sidebar</a></li>
+							<li class="nav-item" ng2-router-active><a class="nav-link" [routerLink]="['/home']">Fixed</a></li>
+							<li class="nav-item" ng2-router-active><a class="nav-link" [routerLink]="['/sidebar']">Sidebar</a></li>
 						</ul>
 					</div>
 					<!-- // END Collapse -->
 
 				</div>
-			</navbar>
+			</ng2-bl-navbar>
 
 			<!-- Breadcrumb -->
 			<ol class="breadcrumb">
@@ -40,14 +39,14 @@ import { RouterActive } from 'app/directives/router-active.directive'
 
 			<hello-world></hello-world>
 
-		</layout>
+		</ng2-bl-layout>
 	`,
 	directives: [
 		ROUTER_DIRECTIVES,
 		LayoutComponent,
 		NavbarComponent,
 		HelloWorldComponent,
-		RouterActive
+		RouterActiveDirective
 	]
 })
 

@@ -1,5 +1,5 @@
-# Bootstrap Layout Angular 2 boilerplate
-> Angular 2 boilerplate using [Bootstrap Layout](https://github.com/themekit/bootstrap-layout)
+# bs-layout-boilerplate-angular2
+> Angular2 boilerplate using [Bootstrap Layout](https://github.com/themekit/bootstrap-layout) and [ng2-bootstrap-layout](https://github.com/themekit/ng2-bootstrap-layout).
 
 ### Demo
 > You can [see a working live demo](http://bs-layout-boilerplate-angular2.themekit.io) of this boilerplate.
@@ -15,53 +15,43 @@ cd my-project
 ```
 
 ### Install dependencies
-> Install via npm:
-
-```bash
-npm install
-```
-
-### Vendor libraries
-> Copy the required vendor libraries in `./dist/vendor`:
-
-```bash
-npm run cp
-```
-
-### Development server
-> The following will start `lite-server`, serving the contents of `./dist` on `http://localhost:3000`. 
-
-> It will also watch the files in the `./src/ts` directory for any changes, recompile to `./dist/app` and inject the changes into your browser automatically.
-
-```bash
-npm start
-```
-
-### Production build
 > Install `gulp`:
 
 ```bash
 npm install -g gulp
 ```
 
-> Create a **minified** production bundle with SystemJS Builder in `./dist/app/app.bundle.js`.
-
-> The following assumes you have already compiled the TypeScript from `./src/ts` to `./dist/app`.
+> Install application dependencies:
 
 ```bash
-gulp release:js
+npm install
 ```
 
-> To compile the TypeScript from `./src/ts` to `./dist/app` AND create a **minified** production bundle to `./dist/app/app.bundle.js` run:
+### Development server
+> The following will make an initial build and then serve the application on `http://localhost:3000`. 
+
+> It will also watch `./app/**/*.ts` and recompile the TypeScript to `./assets/js`, watch `./assets/sass/**/*` and recompile the Sass to `./assets/css` and watch `index.html`, `systemjs.config.js`, `./assets/**/*.js` and `./assets/**/*.css` files and inject any changes into your browser automatically.
 
 ```bash
-gulp release:ts
+npm start
 ```
 
-#### Load bundle
-> To use the production bundle, uncomment the following in `./dist/index.html`, before the call to `System.import('app')`:
+### Development build
+
+```bash
+gulp build
+```
+
+### Production build
+
+```bash
+NODE_ENV=production gulp release
+```
+
+#### Load production bundle
+> To use the production bundle, uncomment the following in `./index.html`, before the call to `System.import('app')`:
 
 ```html
 <!-- Production Bundle -->
-<script src="app/app.bundle.js"></script>
+<script src="assets/js/app.bundle.js"></script>
 ``` 

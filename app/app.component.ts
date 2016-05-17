@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Routes, ROUTER_DIRECTIVES } from '@angular/router';
-import { HomePage } from './pages/home.page';
-import { SidebarPage } from './pages/sidebar.page';
+import { HomePage } from './home/index';
+import { SidebarPage } from './sidebar/index';
 
 @Component({
 	selector: 'app',

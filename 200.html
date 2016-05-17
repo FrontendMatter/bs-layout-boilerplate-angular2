@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bs-layout-boilerplate-angular2 demo</title>
+
+	<!-- Enable pushState routing -->
+	<base href="/">
+
+	<!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
+	<meta name="robots" content="noindex">
+
+	<!-- Material Design Icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Simplebar.js CSS -->
+	<link type="text/css" href="assets/vendor/simplebar.css" rel="stylesheet">
+
+	<!-- App CSS (includes vendor) -->
+	<link type="text/css" href="assets/css/app.css" rel="stylesheet">
+
+	<!-- SystemJS -->
+	<script src="assets/vendor/system.src.js"></script>
+
+	<!-- SystemJS Builder Production Bundle -->
+	<script src="assets/js/app.bundle.js"></script>
+
+	<!-- SystemJS Config -->
+	<script src="systemjs.config.js"></script>
+
+</head>
+<body>
+	<app>Loading ...</app>
+
+	<!-- Start App -->
+	<script>System.import('app').then(null, console.error.bind(console));</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+node_modules/
+app/
+typings/
+bs-config.json
+package.json
+tsconfig.json
+typings.json
+gulpfile.js
+*.md
